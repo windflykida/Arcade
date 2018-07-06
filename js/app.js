@@ -13,7 +13,7 @@ class Enemy {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
-    this.speed = Math.floor((Math.random() * 200)  + 1 );
+    this.speed = Math.floor((Math.random() * (230 ) ));
 };
 
 // Update the enemy's position, required method for game
@@ -25,26 +25,26 @@ update(dt) {
     // all computers.
     this.x += this.speed * dt;
 
-    if(this.x > 505){
+    if(this.x > 505){ // 505 - width
       this.x = -200;
     }
     // dt multiplier ensures game runs at same speed for all computers
 
 // If statements keep the enemies within road tiles
 // collision detection
+
+// collision isusses - source https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 for (let i = 0; i < allEnemies.length; i++){
 if ( (player.x < allEnemies[i].x + allEnemies[i].width) &&
      (player.x + player.width > allEnemies[i].x) &&
      (player.y < allEnemies[i].y + allEnemies[i].height) &&
      (player.height + player.y > allEnemies[i].y)){
-       
-       player.x = 305;
-       player.y = 405;
+
+       begining();
      }
     }
-
    }
- }
+ };
 
 
 
@@ -54,6 +54,10 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+function begining(){
+  player.x = 305;
+  player.y = 405;
+};
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
@@ -71,10 +75,10 @@ class Player {
     this.height = 70;
 
     if(this.y <15){
-      this.starterPosition();
+      begining();
     }
 
-      // collision isusses - source https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+
 
 
   }
@@ -119,10 +123,8 @@ class Player {
       }
     }
 
-Player.prototype.starterPosition = function(){
-  this.x = 305;
-  this.y = 405;
-}
+
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -130,7 +132,7 @@ Player.prototype.starterPosition = function(){
 let enemy1 = new Enemy(-100,60);
 let enemy2 = new Enemy(-20,144);
 let enemy3 = new Enemy(-200,230);
-let enemy4 = new Enemy(-50,60);
+let enemy4 = new Enemy(-90,60);
 let enemy5 = new Enemy(-300,144);
 var allEnemies =[enemy1,enemy2,enemy3,enemy4,enemy5];
 
