@@ -1,6 +1,18 @@
-frontend-nanodegree-arcade-game
-===============================
+# ARCADE GAME
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* [Instructions](#instructions)
+* [Sources](#Sources)
+
+## instructions
+
+Game for one player.   
+The obstacles will be bugs that moves. The player should move so as not to get in the way of the worm. If a collision happens, the player returns to the position and starts the next turn.
+On the way Player collects gem.
+
+## Sources
+
+Study Jam FEND 4
+Collision - https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+Modal - from my Memory Game Project.
