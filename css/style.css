@@ -29,11 +29,6 @@ body {
     width: 50px;
   }
 
-  .lives .show {
-    display: inline-block;
-    height: 50px;
-    width:50px;
-  }
-   .lives .hide {
+   .hide {
     display: none;
   }
