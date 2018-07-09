@@ -1,11 +1,6 @@
 /******* LIST OF VARIABLES  *******/
 let modal = document.querySelector(".modal");
 let life = document.querySelectorAll("modal-content.life");
-let lives = Array.from(life);
-let playerLife = 3;
-
-
-
 
 
 /******* ENEMY  *******/
@@ -15,12 +10,15 @@ class Enemy {
  constructor(x,y) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
+
     this.x = x;
     this.y = y;
-    this.width = 70;
-    this.height = 70;
+    this.width = 70; // for collison
+    this.height = 70; // for collison
+
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
+
     this.sprite = 'images/enemy-bug.png';
     this.speed = Math.floor(Math.random() * 230 );
 };
@@ -48,11 +46,7 @@ if ( (player.x < allEnemies[i].x + allEnemies[i].width) &&
      (player.x + player.width > allEnemies[i].x) &&
      (player.y < allEnemies[i].y + allEnemies[i].height) &&
      (player.height + player.y > allEnemies[i].y)){
-       playerLife--;
        begining();
-       counting();
-
-
      }
     }
    }
@@ -64,6 +58,7 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// player position
 function begining(){
   player.x = 305;
   player.y = 405;
@@ -87,15 +82,14 @@ class Player {
     this.height = 70;
 
     if(this.y <15){
+      endGame();
       begining();
     }
   }
 
-
   render(){
    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
-
 
   handleInput(val){
     switch (val){
@@ -128,7 +122,7 @@ class Player {
        break;
         }
       }
-    }
+    };
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -157,28 +151,7 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
-function counting(){
-  let playerLife = 3;
-  playerLife--;
-  let lives = [];
-  let hide = document.getElementsByClassName("hide");
-  let show = document.getElementsByClassName("show");
-  if(playerLife == 2) {
-    lives[2].classList.add("hide");
-  } else if ( playerLife == 1){
-    lives[1].classList.add("hide");
-  } else if (playerLife == 0){
-    lives[0].classList.add("hide");
-  }
-
-  lives = [];
-  endGame();
-};
-
-
-
-
+// Modal
 function endGame(){
-
-      modal.style.display ="block";
-    }
+    modal.style.display ="block";
+  };
