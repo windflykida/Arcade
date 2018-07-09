@@ -7,9 +7,12 @@
 
 ## instructions
 
-Game for one player.   
-The obstacles will be bugs that moves. The player should move so as not to get in the way of the worm. If a collision happens, the player returns to the position and starts the next turn.
-On the way Player collects gem.
+1.Game for one player.   
+2.The obstacles will be bugs that moves horizontally.
+3.The player should move so and get in the way of the worm.
+4.If a collision happens, the player returns to the position and starts the next turn.
+5.Player collects gem.
+
 
 ## Sources
 
