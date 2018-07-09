@@ -5,7 +5,7 @@
 * [Instructions](#instructions)
 * [Sources](#Sources)
 
-## instructions
+## Instructions
 
 1.Game for one player.   
 2.The obstacles will be bugs that moves horizontally.
@@ -16,6 +16,6 @@
 
 ## Sources
 
-Study Jam FEND 4
-Collision - https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-Modal - from my Memory Game Project.
+1. Study Jam FEND 4
+2. Collision - https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+3. Modal - from my Memory Game Project.
