@@ -11,7 +11,7 @@
 2.The obstacles will be bugs that moves horizontally.
 3.The player should move so and get in the way of the worm.
 4.If a collision happens, the player returns to the position and starts the next turn.
-5.Player collects gem.
+5.Player needs to reach river.
 
 
 ## Sources
