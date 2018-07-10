@@ -41,24 +41,21 @@ update(dt) {
 // collision detection
 
 // collision isusses - source https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-for (let i = 0; i < allEnemies.length; i++){
-if ( (player.x < allEnemies[i].x + allEnemies[i].width) &&
-     (player.x + player.width > allEnemies[i].x) &&
-     (player.y < allEnemies[i].y + allEnemies[i].height) &&
-     (player.height + player.y > allEnemies[i].y)){
+if ( (player.x < this.x + this.width) &&
+     (player.x + player.width > this.x) &&
+     (player.y < this.y + this.height) &&
+     (player.height + player.y > this.y)){
        begining();
      }
-    }
+   }
+// Draw the enemy on the screen, required method for game
+   render(){
+     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
    }
  };
 
 
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-
-// player position
+// player position when she have collision with enemy and when she reach water.
 function begining(){
   player.x = 305;
   player.y = 405;
